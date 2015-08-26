@@ -1,0 +1,16 @@
+---
+# Common plays suitable for all Red Hat-based nodes
+
+- name: Enable EPEL
+  yum: name=epel-release state=present
+
+- name: Install utilities
+  yum: name=vim-enhanced state=present
+  yum: name=screen state=present
+  yum: name=Lmod state=present
+
+- name: Update yum cache
+  yum: update_cache=yes
+
+- name: Apply initial package set updates
+  yum: name=* state=latest
