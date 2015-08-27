@@ -1,0 +1,11 @@
+---
+# Install prerequisites for EasyBuild
+
+- name: Update yum cache
+  yum: update_cache=yes
+
+- name: install the 'Development tools' package group
+  yum: name="@Development tools" state=present
+
+- name: install Lmod
+  yum: name=Lmod state=present

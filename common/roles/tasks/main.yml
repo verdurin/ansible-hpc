@@ -4,10 +4,11 @@
 - name: Enable EPEL
   yum: name=epel-release state=present
 
-- name: Install utilities
+- name: Install Vim
   yum: name=vim-enhanced state=present
+
+- name: Install screen
   yum: name=screen state=present
-  yum: name=Lmod state=present
 
 - name: Update yum cache
   yum: update_cache=yes
