@@ -1,0 +1,14 @@
+---
+- hosts: all
+  remote_user: fedora
+  become_user: root
+  become: yes
+  gather_facts: false
+  pre_tasks:
+    - name: install python and deps for ansible modules
+      raw: dnf install -y python2 python2-dnf libselinux-python
+    - name: gather facts
+      setup:
+  roles:
+    - easybuild
+
