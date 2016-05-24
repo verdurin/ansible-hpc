@@ -1,0 +1,10 @@
+{
+	"variables": {
+	},
+	"builders": [{
+	}],
+	"provisioners": [{
+		"type": "ansible-local",
+		"playbook_file": "local.yml"
+	}]	
+}
