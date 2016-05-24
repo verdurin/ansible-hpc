@@ -7,5 +7,14 @@
 - name: install the 'Development tools' package group
   yum: name="@Development tools" state=present
 
-- name: install Lmod
+- name: enable EPEL on CentOS
+  yum: name=epel-release state=present
+  when: is_centos
+
+- name: install Lmod on Fedora
   yum: name=Lmod state=present
+  when: is_fedora
+
+- name: install Lmod on CentOS
+  yum: name=Lmod state=present enablerepo=epel-testing
+  when: is_centos

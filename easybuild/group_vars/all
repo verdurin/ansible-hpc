@@ -1,0 +1,25 @@
+
+# broad OS family, used to set package manager, etc.
+is_debian_compatible: "'{{ansible_os_family}}' == 'Debian'"
+is_rhel_compatible:   "'{{ansible_os_family}}' == 'RedHat'"
+
+# distributions by name
+is_centos: "'{{ansible_distribution}}' in ['CentOS', 'Scientific']"
+is_debian: "'{{ansible_distribution}}' == 'Debian'"
+is_scientific_linux: "'{{ansible_distribution}}' == 'Scientific'"
+is_ubuntu: "'{{ansible_distribution}}' == 'Ubuntu'"
+is_fedora: "'{{ansible_distribution}}' == 'Fedora'"
+
+is_debian_or_ubuntu: '{{is_debian}} or {{is_ubuntu}}'
+
+# RHEL family releases by version
+is_rhel5_compatible: "{{is_rhel_compatible}} and {{ansible_distribution_major_version}}|int == 5"
+is_rhel6_compatible: "{{is_rhel_compatible}} and {{ansible_distribution_major_version}}|int == 6"
+is_rhel7_compatible: "{{is_rhel_compatible}} and {{ansible_distribution_major_version}}|int == 7"
+
+# RHEL family release ranges
+is_rhel6_or_later_compatible: "{{is_rhel_compatible}} and {{ansible_distribution_major_version}}|int >= 6"
+is_rhel7_or_later_compatible: "{{is_rhel_compatible}} and {{ansible_distribution_major_version}}|int >= 7"
+
+
+
