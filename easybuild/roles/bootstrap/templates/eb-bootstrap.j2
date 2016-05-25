@@ -1,0 +1,10 @@
+#!/bin/bash
+# pick an installation prefix to install EasyBuild to (change this to your liking)
+EASYBUILD_PREFIX={{easybuild_prefix}}
+
+# download script
+curl -O https://raw.githubusercontent.com/hpcugent/easybuild-framework/develop/easybuild/scripts/bootstrap_eb.py
+
+# bootstrap EasyBuild
+python bootstrap_eb.py ${EASYBUILD_PREFIX}
+

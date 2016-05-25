@@ -1,11 +1,8 @@
 ---
 # Install prerequisites for EasyBuild
 
-- name: Update yum cache
-  yum: update_cache=yes
-
 - name: install the 'Development tools' package group
-  yum: name="@Development tools" state=present
+  yum: name="@Development tools" state=present update_cache=yes
 
 - name: enable EPEL on CentOS
   yum: name=epel-release state=present

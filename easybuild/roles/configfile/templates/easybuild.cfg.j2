@@ -1,0 +1,22 @@
+[basic]
+robot={{ easybuild_prefix }}/ebfiles_repo
+
+[config]
+modules-tool: Lmod
+module-syntax: Lua
+
+installpath={{ easybuild_prefix }}
+
+subdir-software=software
+
+subdir-modules=modules
+
+sourcepath={{ easybuild_prefix }}/source
+
+# compile the software here
+#buildpath=/tmp/easybuild
+
+# Repository type
+repository=FileRepository
+# folder to store installed easyconfigs
+repositorypath={{ easybuild_prefix }}/ebfiles

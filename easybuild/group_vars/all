@@ -1,3 +1,5 @@
+---
+easybuild_prefix: /srv/data/sw/eb
 
 # broad OS family, used to set package manager, etc.
 is_debian_compatible: "'{{ansible_os_family}}' == 'Debian'"

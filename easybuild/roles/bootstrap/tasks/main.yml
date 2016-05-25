@@ -1,0 +1,22 @@
+---
+# Install EasyBuild
+#
+
+- name: Create EasyBuild bootstrap script
+  template: 
+    src=eb-bootstrap.j2 
+    dest=/tmp mode=0755
+
+- name: Create EasyBuild directories
+  file: 
+    path={{ easybuild_prefix }}/{{ item.path }} 
+    state=directory 
+    group=tracerx
+  with_items:
+    - { path: 'build' }
+    - { path: 'software' }
+    - { path: 'sources' }
+    - { path: 'ebfiles_repo' }
+ 
+- name: Execute EasyBuild bootstrap script
+  command: /tmp/eb-bootstrap.j2  

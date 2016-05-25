@@ -1,0 +1,9 @@
+---
+# Apply roles on this site
+
+- name: Apply EasyBuild prerequisites
+  hosts: all
+
+  roles:
+    - { role: lmod, tags: "lmod" }
+    - { role: bootstrap, tags: "bootstrap" }
